@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .countdown {
+      font-size: 4rem;
+      font-weight: bold;
+      color: #38bdf8;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    a {
+      color: #facc15;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>hey, this isn't really used for anything yet, so you'll be redirected to my bio website. <br> <br> (made by mvp) <br> (also known as mostvaluable or foreverspoke)</h1>
+  <p>You will be redirected in <span class="countdown" id="countdown">5</span> seconds.</p>
+  <p>If not, <a href="https://google.com">click here</a>.</p>
+
+  <script>
+    let seconds = 5;
+    const countdownEl = document.getElementById("countdown");
+
+    const interval = setInterval(() => {
+      seconds--;
+      countdownEl.textContent = seconds;
+
+      if (seconds <= 0) {
+        clearInterval(interval);
+        window.location.href = "https://slat.cc/azx";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
